@@ -23,4 +23,17 @@ class SubscriberController
 
         return response()->json($subscribers);
     }
+
+    public function show(int $id): Response
+    {
+        $subscriber = Subscriber::find($id);
+
+        if (is_null($subscriber)) {
+            return response()->httpCode(422)->json(['message' => 'Subscriber not found']);
+        }
+
+        return response()->json([
+            'data' => $subscriber
+        ]);
+    }
 }
