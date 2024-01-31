@@ -29,3 +29,9 @@ An `.env` is auto created from `.env.example` on project install you can change 
 ### Design Doc
 
 [see here for design document](design.md)
+
+### TODO (could not complete due to time constraint)
+
+- Document API using swagger UI
+- Add automated tests on client and server side
+- Implement a cache layer(redis)
