@@ -17,8 +17,14 @@ class CustomExceptionHandler implements IExceptionHandler
     {
         if ($error instanceof ModelNotFoundException) {
             response()->httpCode(404)->json(['message' => $error->getMessage()]);
-        } else {
-            response()->httpCode($error->getCode() || 500)->json(['message' => $error->getMessage()]);
         }
+
+        if ($request->getUrl()->contains('/api')) {
+            response()->json([
+                'error' => $error->getMessage(),
+                'code' => $error->getCode(),
+            ]);
+        }
+        response()->httpCode($error->getCode() ?? 500)->json(['message' => $error->getMessage()]);
     }
 }

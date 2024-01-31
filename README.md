@@ -48,3 +48,4 @@ List of all API endpoints:
 - Document API using swagger UI
 - Add automated tests on client and server side
 - Implement a cache layer(redis)
+- configure error pages on nginx
