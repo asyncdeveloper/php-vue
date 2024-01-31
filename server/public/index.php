@@ -1,3 +1,3 @@
 <?php
 
-echo 'Hello World Server';
+require_once '../bootstrap.php';
