@@ -24,6 +24,34 @@ class SubscriberController
         return response()->json($subscribers);
     }
 
+    public function store(): Response
+    {
+        $validator = new Validator;
+        $validation = $validator->validate(input()->all(), [
+            'name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email' => "required|email|max:255",
+            'status' => 'required|max:255'
+        ]);
+
+        if ($validation->fails()) {
+            return response()->httpCode(422)->json(['message' => $validation->errors()->all()]);
+        }
+
+        $data = $validation->getValidatedData();
+
+        if (Subscriber::where('email', $data['email'])->count()) {
+            return response()->httpCode(422)->json(['message' => 'Email already exist']);
+        }
+
+        $subscriber = Subscriber::create($data);
+
+        return response()->httpCode(201)->json([
+                'data' => $subscriber,
+                'message' => 'Subscriber created successfully.'
+            ]);
+    }
+
     public function show(int $id): Response
     {
         $subscriber = Subscriber::find($id);
