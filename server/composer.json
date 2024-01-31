@@ -33,6 +33,8 @@
     "pecee/simple-router": "^5.4.1.7",
     "illuminate/database": "^10.43",
     "illuminate/pagination": "^10.43",
-    "rakit/validation": "^1.4"
+    "rakit/validation": "^1.4",
+    "zircote/swagger-php": "^4.8",
+    "doctrine/annotations": "^2.0"
   }
 }
