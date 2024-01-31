@@ -31,7 +31,7 @@ class SubscriberController
             'name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => "required|email|max:255",
-            'status' => 'required|max:255'
+            'status' => 'required|max:255|in:active,in_active'
         ]);
 
         if ($validation->fails()) {
