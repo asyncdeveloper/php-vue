@@ -25,3 +25,7 @@ You should be able to visit your server (backend) at http://localhost:8080
 ### Environment (Server)
 
 An `.env` is auto created from `.env.example` on project install you can change any of the values as needed.
+
+### Design Doc
+
+[see here for design document](design.md)

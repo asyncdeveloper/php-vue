@@ -13,4 +13,6 @@ destroy:
 down:
 	docker compose down --remove-orphans --volumes
 run-tests:
-	docker compose exec app composer test
+	docker compose exec server composer test
+lint:
+	docker compose exec server composer lint
