@@ -21,6 +21,10 @@ class Router extends SimpleRouter
             SimpleRouter::get('/', function () {
                 return response()->json(['message' => 'Welcome to PHP Rest API visit api/subscribers']);
             });
+
+            SimpleRouter::group(['prefix' => 'api'], function () {
+                SimpleRouter::resource('subscribers', 'SubscriberController');
+            });
         });
 
         // change default namespace for all routes
