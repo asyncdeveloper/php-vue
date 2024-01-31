@@ -30,6 +30,19 @@ An `.env` is auto created from `.env.example` on project install you can change 
 
 [see here for design document](design.md)
 
+# API documentation:
+
+API End points and documentation can be found at:
+[Postman Documentation](https://documenter.getpostman.com/view/5928045/2s9Yyth1mF)
+
+List of all API endpoints:
+
+> POST /api/subscribers
+
+> GET /api/subscribers
+
+> GET /api/subscribers{id}
+
 ### TODO (could not complete due to time constraint)
 
 - Document API using swagger UI
